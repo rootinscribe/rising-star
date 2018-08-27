@@ -36,11 +36,10 @@ export default class Welcome extends Component {
       <View style={styles.container}>
         <StatusBar barStyle='light-content' />
         <Swiper
-          onTouchEnd={(e, state , context) => {
-            // console.warn(state)
-            // if(state.index === this.state.sliderImages.length - 1) {
+          onMomentumScrollEnd ={(e, state , context) => {
+            if(state.index === this.state.sliderImages.length - 1) {
               this.props.navigation.navigate('login')
-            // }
+            }
           }}
           dotColor='white'
           activeDotColor='#CB4640'
